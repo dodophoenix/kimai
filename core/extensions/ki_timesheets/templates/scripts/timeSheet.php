@@ -8,9 +8,11 @@ if ($this->timeSheetEntries)
         <div id="timeSheetTable">
         
           <table>
-              
             <colgroup>
               <col class="option" />
+<?php if ($this->showModified): ?>
+              <col class="modified" />
+<?php endif; ?>
               <col class="date" />
               <col class="from" />
               <col class="to" />
@@ -113,6 +115,13 @@ if ($this->timeSheetEntries)
     <?php endif; ?>
 
             </td>
+
+        <?php if ($this->showModified): ?>
+            <td class="modified <?php echo $tdClass; ?>">
+                <?php $date = new DateTime($row['modified']); echo $this->escape($date->format('d-m-Y')); ?>
+            </td>
+        <?php endif; ?>
+
 
             <td class="date <?php echo $tdClass; ?>">
                 <?php echo $this->escape(strftime($this->kga['date_format'][1],$row['start']));?>

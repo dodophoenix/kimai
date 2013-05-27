@@ -2276,6 +2276,7 @@ class Kimai_Database_Mysql extends Kimai_Database_Abstract {
               $arr[$i]['commentType']       = $row->commentType;
               $arr[$i]['userAlias']         = $row->userAlias;
               $arr[$i]['userName']          = $row->userName;
+              $arr[$i]['modified']          = $row->last_modified;
               $i++;
           }
           return $arr;

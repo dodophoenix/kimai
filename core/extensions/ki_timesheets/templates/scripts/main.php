@@ -13,6 +13,10 @@
     <table>
         <colgroup>
           <col class="options" />
+<?php if ($this->showModified): ?>
+         <col class="modified" />
+<?php endif; ?>
+
           <col class="date" />
           <col class="from" />
           <col class="to" />
@@ -31,6 +35,10 @@
         <tbody>
             <tr>
                 <td class="option">&nbsp;</td>
+<?php if ($this->showModified): ?>
+                <td class="modified"><?php echo $this->kga['lang']['modified']?></td>
+<?php endif; ?>
+
                 <td class="date"><?php echo $this->kga['lang']['datum']?></td>
                 <td class="from"><?php echo $this->kga['lang']['in']?></td>
                 <td class="to"><?php echo $this->kga['lang']['out']?></td>

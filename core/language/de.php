@@ -21,6 +21,7 @@
  * deutsch
  */
 return array(
+"modified"          => "Geändert",
 "countryCode"       => "de-DE",
 "preferences"       => "Einstellungen",
 "total"		        => "Gesamt",

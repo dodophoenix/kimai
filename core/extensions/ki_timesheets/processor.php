@@ -76,6 +76,7 @@ function timesheetAccessAllowed($entry, $action, &$errors) {
     $errors[''] = $kga['lang']['errorMessages']['permissionDenied'];
     return false;
   }
+
   
 }
 
@@ -194,7 +195,7 @@ switch ($axAction) {
 
         if (!isset($kga['user']))
           $data['errors'][] = $kga['lang']['editLimitError'];
-        
+
         if (!$database->global_role_allows($kga['user']['globalRoleID'], 'ki_timesheets-showRates'))
           $data['errors'][] = $kga['lang']['editLimitError'];
 
@@ -394,7 +395,8 @@ switch ($axAction) {
             $view->showTrackingNumber = $database->user_get_preference('ui.showTrackingNumber')!=0;
         }
 
-        $view->showRates = $database->global_role_allows($kga['user']['globalRoleID'],'ki_timesheets-showRates');
+        $view->showRates    = $database->global_role_allows($kga['user']['globalRoleID'],'ki_timesheets-showRates');
+        $view->showModified = $database->global_role_allows($kga['user']['globalRoleID'],'ki_timesheets-editRates');
 
         echo $view->render("timeSheet.php");
     break;

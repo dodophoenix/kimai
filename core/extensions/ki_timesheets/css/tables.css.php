@@ -75,7 +75,7 @@ div#timeSheetTable tr.odd td.time {
 div#timeSheetTable tr.active td.time {
     background: #F00;
 }
-
+div.ki_timesheet tr td.modified,
 div.ki_timesheet tr td.option,
 div.ki_timesheet tr td.date,
 div.ki_timesheet tr td.from,
@@ -95,6 +95,10 @@ div.ki_timesheet>div#timeSheet>div#timeSheetTable>table>tbody>tr>td.username {
 #timeSheet td.option
 {
     width:70px;
+}
+#timeSheet_head td.modified,
+#timeSheet td.modified{
+    width:75px;
 }
 
 #timeSheet_head td.date,

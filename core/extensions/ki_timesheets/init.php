@@ -107,6 +107,7 @@ if (isset($kga['user'])) {
     $view->hideComments = $database->user_get_preference('ui.showCommentsByDefault') != 1;
     $view->showOverlapLines = $database->user_get_preference('ui.hideOverlapLines')!=1;
     $view->showTrackingNumber = $database->user_get_preference('ui.showTrackingNumber')!=0;
+    $view->showModified = $database->global_role_allows($kga['user']['globalRoleID'],'ki_timesheets-editRates');
 }
 
 $view->showRates = $database->global_role_allows($kga['user']['globalRoleID'],'ki_timesheets-showRates');

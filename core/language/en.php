@@ -22,6 +22,7 @@
  *
  */
 return array(
+"modified"          => "Modified",
 "countryCode"       => "en-EN",
 "preferences"       => "Preferences",
 "total"		        => "Total",

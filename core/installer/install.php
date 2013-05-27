@@ -222,9 +222,11 @@ $query=
   `approved` DECIMAL( 10, 2 ) NULL,
   `statusID` SMALLINT NOT NULL,
   `billable` TINYINT NULL,
+  `last_modified` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   INDEX ( `userID` ),
   INDEX ( `projectID` ),
-  INDEX ( `activityID` )
+  INDEX ( `activityID` ),
+
 ) AUTO_INCREMENT=1;";
 exec_query($query);
 
